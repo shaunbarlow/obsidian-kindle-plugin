@@ -35,7 +35,7 @@ export const frontMatterToBook = (frontmatter: KindleFrontmatter): Book => {
   let book_id: string = frontmatter.bookId
   // If this note is still using a fletcher ID, convert it to MD5 for comparison
   if (frontmatter.bookId == hash_short(frontmatter.title)) {
-    book_id = hash(frontmatter.title)
+    book_id = "md5:" + hash(frontmatter.title)
   }
   return {
     id: book_id,

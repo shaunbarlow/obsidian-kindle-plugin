@@ -7,7 +7,7 @@ import { hash, hash_short } from '~/utils';
 const toBookHighlight = (book: Book): BookHighlight => {
   return {
     book: {
-      id: hash(book.title),
+      id: "md5:" + hash(book.title),
       title: book.title,
       author: book.author,
     },
